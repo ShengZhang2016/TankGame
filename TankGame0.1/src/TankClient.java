@@ -11,6 +11,7 @@ public class TankClient extends Frame {
     public static final int GAME_WIDTH = 800;
     public static final int GAME_HEIGHT = 600;
 
+    private Blood blood = new Blood();
 
     Tank myTank = new Tank(50, 50, true, Tank.Direction.STOP, this);
 
@@ -31,6 +32,12 @@ public class TankClient extends Frame {
         g.drawString("Explode count " + explodes.size(), 60, 80);
         g.drawString("Tanks count " + tanks.size(), 60, 100);
         g.drawString("Tank Life " + myTank.getLife(), 60, 120);
+
+        if (tanks.size() <= 0) {
+            for (int i = 0; i < 5; i++) {
+                tanks.add(new Tank(50 + 40 *(i + 1), 50, false, Tank.Direction.D, this));
+            }
+        }
 
         for (int i = 0; i < tanks.size(); i++) {
             Tank t = tanks.get(i);
@@ -53,8 +60,10 @@ public class TankClient extends Frame {
         }
 
         myTank.draw(g);
+        myTank.eat(blood);
         w1.draw(g);
         w2.draw(g);
+        blood.draw(g);
     }
 
     // Double buffer, in case of flash.

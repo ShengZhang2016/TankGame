@@ -82,9 +82,9 @@ public class Missile {
         }
     }
 
-    public boolean isLive() {
-        return live;
-    }
+//    public boolean isLive() {
+//        return live;
+//    }
 
     public Rectangle getRec() {
         return new Rectangle(x, y, WIDTH, HEIGHT);
