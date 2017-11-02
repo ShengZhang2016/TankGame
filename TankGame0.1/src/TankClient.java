@@ -13,7 +13,7 @@ public class TankClient extends Frame {
 
     private Blood blood = new Blood();
 
-    Tank myTank = new Tank(50, 50, true, Tank.Direction.STOP, this);
+    Tank myTank = new Tank(50, 50, true, Direction.STOP, this);
 
     List<Missile> missiles = new ArrayList<>();
     List<Explode> explodes = new ArrayList<>();
@@ -35,7 +35,7 @@ public class TankClient extends Frame {
 
         if (tanks.size() <= 0) {
             for (int i = 0; i < 5; i++) {
-                tanks.add(new Tank(50 + 40 *(i + 1), 50, false, Tank.Direction.D, this));
+                tanks.add(new Tank(50 + 40 *(i + 1), 50, false, Direction.D, this));
             }
         }
 
@@ -83,7 +83,7 @@ public class TankClient extends Frame {
 
     public void launchFrame() {
         for (int i = 0; i < 10; i++) {
-            tanks.add(new Tank(50 + 40 *(i + 1), 50, false, Tank.Direction.D, this));
+            tanks.add(new Tank(50 + 40 *(i + 1), 50, false, Direction.D, this));
         }
         this.setLocation(300, 400);
         this.setSize(GAME_WIDTH, GAME_HEIGHT);

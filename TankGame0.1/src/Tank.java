@@ -27,8 +27,6 @@ public class Tank {
 
     private boolean bL = false, bU = false, bR = false, bD = false;
 
-    enum Direction {L, LU, U, UR, R, RD, D, DL, STOP}
-
     private static Random r = new Random();
 
     private int step = r.nextInt(12) + 3;
